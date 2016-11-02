@@ -89,16 +89,15 @@ int main()
 		}
 		
 	}
-	img_singlechannel.convertTo(img_singlechannel, CV_32F, 1.0, 0.0);
-	Mat img_singlechannel_copy = img_singlechannel.clone();
+	//输出是img_Regularized,代表已经图像增强的单通道8bit图像
 
 	
 	//判断图像大小是否需要制作缩略图
 	int pyr_step; //图像金字塔层数
-	if (img_singlechannel.rows > 4096 || img_singlechannel.cols > 4096)
+	if (img_Regularized.rows > 4096 || img_Regularized.cols > 4096)
 	{
-		float  MAX_sizeof2 = max(log2f((float)img_singlechannel.rows), log2f((float)img_singlechannel.cols));
-		float  MIN_sizeof2 = min(log2f((float)img_singlechannel.rows), log2f((float)img_singlechannel.cols));
+		float  MAX_sizeof2 = max(log2f((float)img_Regularized.rows), log2f((float)img_Regularized.cols));
+		float  MIN_sizeof2 = min(log2f((float)img_Regularized.rows), log2f((float)img_Regularized.cols));
 		pyr_step = floor(MAX_sizeof2 - log2(4096))+1;
 		if (floor(MIN_sizeof2) - pyr_step < 7)
 		{
