@@ -41,7 +41,9 @@
             this.RunDetectionButton = new System.Windows.Forms.Button();
             this.WinFormCloseButton = new System.Windows.Forms.Button();
             this.VerifyParamButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ImageMonitor)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ChooseFolderButton
@@ -75,7 +77,7 @@
             // 
             // ImageMonitor
             // 
-            this.ImageMonitor.Location = new System.Drawing.Point(24, 11);
+            this.ImageMonitor.Location = new System.Drawing.Point(-1, -1);
             this.ImageMonitor.Name = "ImageMonitor";
             this.ImageMonitor.Size = new System.Drawing.Size(569, 405);
             this.ImageMonitor.TabIndex = 3;
@@ -164,6 +166,15 @@
             this.VerifyParamButton.UseVisualStyleBackColor = true;
             this.VerifyParamButton.Click += new System.EventHandler(this.VerifyParamButton_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.ImageMonitor);
+            this.panel1.Location = new System.Drawing.Point(24, 11);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(569, 405);
+            this.panel1.TabIndex = 12;
+            // 
             // Main_WinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -177,15 +188,16 @@
             this.Controls.Add(this.meterlabel);
             this.Controls.Add(this.pixelsizeTxtBox);
             this.Controls.Add(this.pixelsizeLabel);
-            this.Controls.Add(this.ImageMonitor);
             this.Controls.Add(this.InfoMonitor);
             this.Controls.Add(this.GetImageInfoButton);
             this.Controls.Add(this.ChooseFolderButton);
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main_WinForm";
             this.Text = "SAR航空器目标检测插件（上海交大提供）";
             this.Load += new System.EventHandler(this.Main_WinForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImageMonitor)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +217,6 @@
         private System.Windows.Forms.Button RunDetectionButton;
         private System.Windows.Forms.Button WinFormCloseButton;
         private System.Windows.Forms.Button VerifyParamButton;
+        private System.Windows.Forms.Panel panel1;
     }
 }
