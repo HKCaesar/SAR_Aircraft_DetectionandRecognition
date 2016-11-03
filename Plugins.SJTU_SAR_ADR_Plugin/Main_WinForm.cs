@@ -34,6 +34,7 @@ namespace Plugins.SJTU_SAR_ADR_Plugin
             InitializeComponent();
         }
 
+        //选择插件文件夹按钮
         private void ChooseFolderButton_Click(object sender, EventArgs e)
         {
             #region 选择插件路径
@@ -86,13 +87,14 @@ namespace Plugins.SJTU_SAR_ADR_Plugin
             #endregion
 
         }
-
+        
+        //信息窗口显示信息变化
         private void InfoMonitor_TextChanged(object sender, EventArgs e)
         {
 
         }
         
-        //修改像元尺寸和遥感平台信息
+        //修改像元尺寸和遥感平台信息按钮
         private void VerifyParamButton_Click(object sender, EventArgs e)
         {
             //修改ImageINFO.txt中的像元尺寸信息
@@ -219,7 +221,8 @@ namespace Plugins.SJTU_SAR_ADR_Plugin
             MessageBox.Show("Detection Finished");
             string originfilePath = ImageFolder + @"\Final_result.tiff";
             MessageBox.Show("Result image is " + originfilePath);
-            this.ImageMonitor.Image = Image.FromFile(originfilePath);//动态加载图片  
+            this.ImageMonitor.Image = Image.FromFile(originfilePath);
+            //动态加载结果图片，结果图片为彩色图片，默认不需要缩略图
             this.ImageMonitor.SizeMode = PictureBoxSizeMode.Zoom;//设置图片显示方式 
         }
         //
@@ -232,6 +235,7 @@ namespace Plugins.SJTU_SAR_ADR_Plugin
         {
             this.Dispose();
         }
+
 
         //将EXE中显示的信息加入信息显示窗口，自动滚动至最后一行
         private void OutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
@@ -309,7 +313,7 @@ namespace Plugins.SJTU_SAR_ADR_Plugin
                 process_Thumbnail.WaitForExit();
 #endregion
 
-                this.ImageMonitor.Image = Image.FromFile(PL_img_path);//动态加载图片  
+                this.ImageMonitor.Image = Image.FromFile(PluginfoldPath + @".\\bin_thumbnail\\img_thumbnail.tiff");//动态加载缩略图片  
                 this.ImageMonitor.SizeMode = PictureBoxSizeMode.Zoom;//设置图片显示方式 
                 this.InfoMonitor.AppendText("ImagePath: " + PL_img_path + "\n");
                 sw.Write("<SARImagePath>" + "\r\n");

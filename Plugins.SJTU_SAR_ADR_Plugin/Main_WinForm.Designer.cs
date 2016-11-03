@@ -58,7 +58,7 @@
             // 
             // GetImageInfoButton
             // 
-            this.GetImageInfoButton.Location = new System.Drawing.Point(340, 423);
+            this.GetImageInfoButton.Location = new System.Drawing.Point(297, 423);
             this.GetImageInfoButton.Name = "GetImageInfoButton";
             this.GetImageInfoButton.Size = new System.Drawing.Size(129, 23);
             this.GetImageInfoButton.TabIndex = 1;
@@ -138,7 +138,7 @@
             // 
             // RunDetectionButton
             // 
-            this.RunDetectionButton.Location = new System.Drawing.Point(609, 423);
+            this.RunDetectionButton.Location = new System.Drawing.Point(579, 423);
             this.RunDetectionButton.Name = "RunDetectionButton";
             this.RunDetectionButton.Size = new System.Drawing.Size(167, 23);
             this.RunDetectionButton.TabIndex = 9;
