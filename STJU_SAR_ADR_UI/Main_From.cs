@@ -345,10 +345,13 @@ namespace STJU_SAR_ADR_UI
             process_ReadImageInfo.StandardInput.WriteLine(".\\GDAL_ReadImageInfo.exe");
 
 
+
+
             process_ReadImageInfo.BeginOutputReadLine();
             process_ReadImageInfo.CloseMainWindow();
             process_ReadImageInfo.StandardInput.WriteLine(">Finish");
             process_ReadImageInfo.StandardInput.WriteLine("exit");
+
             process_ReadImageInfo.WaitForExit();
             #endregion
 
@@ -365,6 +368,7 @@ namespace STJU_SAR_ADR_UI
                 }
                     sr_line = sr.ReadLine();
             }
+            sr.Close();
             this.pixelsizeTxtBox.AppendText(Rez_s);
             #endregion
         }

@@ -1,4 +1,4 @@
-<SARImagePath>
+﻿<SARImagePath>
 E:\SAR_DR_2016\02_vs2015sln\Data\aircraft\Tokyo.tif
 <RefImagePath>
 E:\SAR_DR_2016\02_vs2015sln\SAR_Aircraft_DetectionandRecognition\STJU_SAR_ADR_UI\FolderTreeModel\SAR_Result\Tokyo\img_en.tif

@@ -1,4 +1,0 @@
-<ImagePath>
-C:\Users\zsn\Desktop\光学舰船程序\Data\可见光舰船示意图\舰船1.TIF
-<PluginfoldPath>
-C:\Users\zsn\Desktop\光学舰船程序\SJTU插件\SJTU插件\SAR航空器检测识别
