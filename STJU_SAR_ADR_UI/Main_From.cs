@@ -195,7 +195,7 @@ namespace STJU_SAR_ADR_UI
         private void VerifyParamButton_Click(object sender, EventArgs e)
         {
             //修改ImageINFO.txt中的像元尺寸信息
-            StreamReader str_change = new StreamReader(PluginfoldPath + @".\bin_readinfo\ImageINFO.txt", Encoding.UTF8);
+            StreamReader str_change = new StreamReader(PluginfoldPath + @".\bin_readinfo\ImageINFO.txt", Encoding.Default);
             StringBuilder str_build = new StringBuilder();
             string line = str_change.ReadLine();
             while (line != null)
@@ -218,7 +218,7 @@ namespace STJU_SAR_ADR_UI
             str_write.Write(str_build.ToString());
             str_write.Close();
             //修改config.txt中的像元尺寸信息
-            StreamReader str_change_config = new StreamReader(PluginfoldPath + @".\config\config.txt", Encoding.UTF8);
+            StreamReader str_change_config = new StreamReader(PluginfoldPath + @".\config\config.txt", Encoding.Default);
             StringBuilder str_build_config = new StringBuilder();
             string con_line = str_change_config.ReadLine();
             while (con_line != null)
@@ -356,7 +356,7 @@ namespace STJU_SAR_ADR_UI
             #endregion
 
             #region 从.\\bin_readinfo\\ImageINFO中读取图像信息，写入pixelsizeTxtBox
-            StreamReader sr = new StreamReader(PluginfoldPath + @".\bin_readinfo\ImageINFO.txt", Encoding.UTF8);
+            StreamReader sr = new StreamReader(PluginfoldPath + @".\bin_readinfo\ImageINFO.txt", Encoding.Default);
             string Rez_s = "";
             string sr_line = sr.ReadLine();
             while (sr_line != null)

@@ -98,7 +98,7 @@ namespace Plugins.SJTU_SAR_ADR_Plugin
         private void VerifyParamButton_Click(object sender, EventArgs e)
         {
             //修改ImageINFO.txt中的像元尺寸信息
-            StreamReader str_change = new StreamReader(PluginfoldPath + @".\bin_readinfo\ImageINFO.txt", Encoding.UTF8);
+            StreamReader str_change = new StreamReader(PluginfoldPath + @".\bin_readinfo\ImageINFO.txt", Encoding.Default);
             StringBuilder str_build = new StringBuilder();
             string line = str_change.ReadLine();
             while(line != null) 
@@ -121,7 +121,7 @@ namespace Plugins.SJTU_SAR_ADR_Plugin
             str_write.Write(str_build.ToString());
             str_write.Close();
             //修改config.txt中的像元尺寸信息
-            StreamReader str_change_config = new StreamReader(PluginfoldPath + @".\config\config.txt", Encoding.UTF8);
+            StreamReader str_change_config = new StreamReader(PluginfoldPath + @".\config\config.txt", Encoding.Default);
             StringBuilder str_build_config = new StringBuilder();
             string con_line = str_change_config.ReadLine();
             while (con_line != null)
@@ -277,7 +277,7 @@ namespace Plugins.SJTU_SAR_ADR_Plugin
 
                 # region 将图像路径写出，做缩略图
                 //
-                StreamWriter image_path = new StreamWriter(PluginfoldPath + @"\config\image_path.txt", false, Encoding.Default);
+                StreamWriter image_path = new StreamWriter(PluginfoldPath + @"\config\image_path.txt", false, Encoding.UTF8);
                 image_path.Write("<ImagePath>" + "\r\n");
                 image_path.Write(PL_img_path + "\r\n");
                 image_path.Write("<PluginFolderPath>" + "\r\n");

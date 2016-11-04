@@ -2,8 +2,69 @@
 //
 
 #include "stdafx.h"
+#include <Windows.h>
 #include "CoordinateTransform.h"
 
+//将wchar转换为UTF-8格式
+std::string wchar_to_utf8(const wchar_t* buffer, int len)
+{
+	int nChars = ::WideCharToMultiByte(
+		CP_UTF8,
+		0,
+		buffer,
+		len,
+		NULL,
+		0,
+		NULL,
+		NULL);
+	if (nChars == 0)return"";
+
+	string newbuffer;
+	newbuffer.resize(nChars);
+	::WideCharToMultiByte(
+		CP_UTF8,
+		0,
+		buffer,
+		len,
+		const_cast<char*>(newbuffer.c_str()),
+		nChars,
+		NULL,
+		NULL);
+
+	return newbuffer;
+}
+//将wstring转换为UTF-8格式
+std::string wstring_to_utf8(const std::wstring& str)
+{
+	return wchar_to_utf8(str.c_str(), (int)str.size());
+}
+//将string转换为UTF-8格式
+std::string string_To_UTF8(const std::string & str)
+{
+	int nwLen = ::MultiByteToWideChar(CP_ACP, 0, str.c_str(), -1, NULL, 0);
+
+	wchar_t * pwBuf = new wchar_t[nwLen + 1];//一定要加1，不然会出现尾巴
+	ZeroMemory(pwBuf, nwLen * 2 + 2);
+
+	::MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.length(), pwBuf, nwLen);
+
+	int nLen = ::WideCharToMultiByte(CP_UTF8, 0, pwBuf, -1, NULL, NULL, NULL, NULL);
+
+	char * pBuf = new char[nLen + 1];
+	ZeroMemory(pBuf, nLen + 1);
+
+	::WideCharToMultiByte(CP_UTF8, 0, pwBuf, nwLen, pBuf, nLen, NULL, NULL);
+
+	std::string retStr(pBuf);
+
+	delete[]pwBuf;
+	delete[]pBuf;
+
+	pwBuf = NULL;
+	pBuf = NULL;
+
+	return retStr;
+}
 
 int main()
 {
@@ -85,13 +146,14 @@ int main()
 	const char* pszSrcWkt = poDataset->GetProjectionRef();
 	char* preLpszSrcWkt = const_cast<char*>(pszSrcWkt);
 	int ncount1 = strlen(pszSrcWkt);
-	cout << ncount1 << endl;
+	//cout << ncount1 << endl;
 	int verhicle_flag = 1;
 	if (ncount1 == 0)
 	{
 		cout << "图像没有投影信息" << endl;
 		verhicle_flag = 0;
 	}
+	string TransferUTF8;
 #pragma region 2.1 地理编码中无投影信息
 	if (verhicle_flag == 0)
 	{
