@@ -191,6 +191,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main_From";
             this.Text = "SAR航空器目标检测插件（上海交大提供）";
+            this.Load += new System.EventHandler(this.Main_Form_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImageMonitor)).EndInit();
             this.ResumeLayout(false);

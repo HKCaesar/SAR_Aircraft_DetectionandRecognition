@@ -372,9 +372,6 @@ namespace STJU_SAR_ADR_UI
             this.pixelsizeTxtBox.AppendText(Rez_s);
             #endregion
         }
-        double PL_img_Rez, LatMin, LatMax, LongMin, LongMax;
-
-        int PL_img_Height, PL_img_Width;
 
         public Main_From()
         {
@@ -382,7 +379,7 @@ namespace STJU_SAR_ADR_UI
             InitializeComponent();
         }
 
-        private void Main_WinForm_Load(object sender, EventArgs e)
+        private void Main_Form_Load(object sender, EventArgs e)
         {
             this.ImageMonitor.MouseWheel += new MouseEventHandler(ImageMonitor_MouseWheel);
         }
