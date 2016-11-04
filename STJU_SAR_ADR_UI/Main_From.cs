@@ -151,7 +151,9 @@ namespace STJU_SAR_ADR_UI
 
             StreamWriter image_path = new StreamWriter(PluginfoldPath+@"\config\image_path.txt", false, Encoding.Default);
             image_path.Write("<ImagePath>" + "\r\n");
-            image_path.Write(PL_img_path + "\r\n");
+            image_path.Write(ImagePath + "\r\n");
+            image_path.Write("<PluginFolderPath>" + "\r\n");
+            image_path.Write(PluginfoldPath + "\r\n");
             image_path.Close();
             //缩略图
             Control.CheckForIllegalCrossThreadCalls = false;
@@ -185,7 +187,7 @@ namespace STJU_SAR_ADR_UI
             process_Thumbnail.WaitForExit();
 
             #endregion
-            this.ImageMonitor.Image = Image.FromFile(PluginfoldPath + @".\\bin_thumbnail\\img_thumbnail.tiff");//动态加载缩略图片  
+            this.ImageMonitor.Image = Image.FromFile(PluginfoldPath + @"\bin_thumbnail\img_thumbnail.tiff");//动态加载缩略图片  
             this.ImageMonitor.SizeMode = PictureBoxSizeMode.Zoom;//设置图片显示方式 
         }
 
@@ -248,6 +250,12 @@ namespace STJU_SAR_ADR_UI
             //显示完成情况
             MessageBox.Show("像元尺寸修改成" + this.pixelsizeTxtBox.Text);
             MessageBox.Show("平台" + this.ChooseRSPlatformComboBox.SelectedItem.ToString() + "设置成功");
+        }
+
+        //关闭整个窗口
+        private void WinFormCloseButton_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
 
         //运行飞机检测程序EXE

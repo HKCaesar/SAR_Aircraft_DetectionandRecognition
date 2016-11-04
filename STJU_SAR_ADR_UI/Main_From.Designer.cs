@@ -48,6 +48,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.ImageMonitor);
             this.panel1.Location = new System.Drawing.Point(24, 11);
             this.panel1.Name = "panel1";
@@ -130,6 +131,7 @@
             this.WinFormCloseButton.TabIndex = 17;
             this.WinFormCloseButton.Text = "关闭窗口";
             this.WinFormCloseButton.UseVisualStyleBackColor = true;
+            this.WinFormCloseButton.Click += new System.EventHandler(this.WinFormCloseButton_Click);
             // 
             // RunDetectionButton
             // 

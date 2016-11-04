@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <ExecutablePath>E:\SAR_DR_2016\00_3rd_party_package\01_tbb\bin\ia32\vc14;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>E:\SAR_DR_2016\00_3rd_party_package\01_tbb\include;E:\SAR_DR_2016\00_3rd_party_package\00_opencv2.4.13_vc14\x86\include\opencv2;E:\SAR_DR_2016\00_3rd_party_package\00_opencv2.4.13_vc14\x86\include\opencv;E:\SAR_DR_2016\00_3rd_party_package\00_opencv2.4.13_vc14\x86\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\SAR_DR_2016\00_3rd_party_package\01_tbb\lib\ia32\vc14;E:\SAR_DR_2016\00_3rd_party_package\00_opencv2.4.13_vc14\x86\staticlib\Debug;$(LibraryPath)</LibraryPath>
+    <_PropertySheetDisplayName>opencv2_4_13_x86_Debug</_PropertySheetDisplayName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>IlmImfd.lib;libjasperd.lib;libjpegd.lib;libpngd.lib;libtiffd.lib;opencv_calib3d2413d.lib;opencv_contrib2413d.lib;opencv_core2413d.lib;opencv_features2d2413d.lib;opencv_flann2413d.lib;opencv_gpu2413d.lib;opencv_highgui2413d.lib;opencv_imgproc2413d.lib;opencv_legacy2413d.lib;opencv_ml2413d.lib;opencv_nonfree2413d.lib;opencv_objdetect2413d.lib;opencv_ocl2413d.lib;opencv_photo2413d.lib;opencv_stitching2413d.lib;opencv_superres2413d.lib;opencv_ts2413d.lib;opencv_video2413d.lib;opencv_videostab2413d.lib;zlibd.lib;tbb_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

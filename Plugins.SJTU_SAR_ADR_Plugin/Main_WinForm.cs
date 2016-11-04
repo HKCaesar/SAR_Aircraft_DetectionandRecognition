@@ -280,6 +280,8 @@ namespace Plugins.SJTU_SAR_ADR_Plugin
                 StreamWriter image_path = new StreamWriter(PluginfoldPath + @"\config\image_path.txt", false, Encoding.Default);
                 image_path.Write("<ImagePath>" + "\r\n");
                 image_path.Write(PL_img_path + "\r\n");
+                image_path.Write("<PluginFolderPath>" + "\r\n");
+                image_path.Write(PluginfoldPath + "\r\n");
                 image_path.Close();
                 //缩略图
                 Control.CheckForIllegalCrossThreadCalls = false;
@@ -322,7 +324,7 @@ namespace Plugins.SJTU_SAR_ADR_Plugin
                 sw.Write(ImageFolder + @"\img_en.tif" + "\r\n");
                 this.InfoMonitor.AppendText("ImageName: " + img_Name + "\n");
                 sw.Write("<OutputDir>" + "\r\n");
-                sw.Write(ImageFolder + "\r\n");
+                sw.Write(ImageFolder + "\\"+" \r\n");
                 sw.Write("<ImageName>" + "\r\n");
                 sw.Write(img_Name + "\r\n");
                 //(2-2) 获取图像的分辨率
@@ -384,7 +386,7 @@ namespace Plugins.SJTU_SAR_ADR_Plugin
                 config_W.Write("<MaskPath>" + "\r\n");
                 config_W.Write(ImageFolder + @"\SAR_maskimg.tif" + "\r\n");
                 config_W.Write("<RefImgPath>" + "\r\n");
-                config_W.Write(ImageFolder + @"\SAR_refimg.tif" + "\r\n");
+                config_W.Write(ImageFolder + @"\img_en.tif" + "\r\n");
                 config_W.Write("<TemplatePath>" + "\r\n");
                 config_W.Write(AimFolder + @"\Template\" + "\r\n");
                 config_W.Write("<ResultImagePath>" + "\r\n");

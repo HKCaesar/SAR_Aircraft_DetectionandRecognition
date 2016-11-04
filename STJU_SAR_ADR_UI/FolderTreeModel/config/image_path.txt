@@ -1,0 +1,4 @@
+<ImagePath>
+E:\SAR_DR_2016\02_vs2015sln\Data\aircraft\Tokyo.tif
+<PluginFolderPath>
+E:\SAR_DR_2016\02_vs2015sln\SAR_Aircraft_DetectionandRecognition\STJU_SAR_ADR_UI\FolderTreeModel

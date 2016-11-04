@@ -68,7 +68,7 @@ int main()
 {
 #pragma region 初始化读取图像,取单通道图像
 	string name;
-	string imagepath;
+	string imagepath,pluginpath;
 	ifstream f_img_path;
 	f_img_path.open("..\\config\\image_path.txt");
 	if (f_img_path.fail())
@@ -79,6 +79,8 @@ int main()
 
 	f_img_path >> name;
 	f_img_path >> imagepath;
+	f_img_path >> name;
+	f_img_path >> pluginpath;
 	f_img_path.close();
 
 	Mat img_ori = imread(imagepath, -1);//-1代表读入和原始数据维度保持一致
