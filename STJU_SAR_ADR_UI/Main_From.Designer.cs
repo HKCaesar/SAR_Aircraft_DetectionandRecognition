@@ -62,6 +62,9 @@
             this.ImageMonitor.Size = new System.Drawing.Size(569, 406);
             this.ImageMonitor.TabIndex = 0;
             this.ImageMonitor.TabStop = false;
+            this.ImageMonitor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ImageMonitor_MouseDown);
+            this.ImageMonitor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ImageMonitor_MouseMove);
+            this.ImageMonitor.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ImageMonitor_MouseUp);
             // 
             // RSplatformLabel
             // 
